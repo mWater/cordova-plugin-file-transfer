@@ -462,10 +462,10 @@ public class FileTransfer extends CordovaPlugin {
                             bytesRead = readResult.inputStream.read(buffer, 0, bufferSize);
 
                             // Send a progress event.
-                            progress.setLoaded(totalBytes);
-                            PluginResult progressResult = new PluginResult(PluginResult.Status.OK, progress.toJSONObject());
-                            progressResult.setKeepCallback(true);
-                            context.sendPluginResult(progressResult);
+                            // progress.setLoaded(totalBytes);
+                            // PluginResult progressResult = new PluginResult(PluginResult.Status.OK, progress.toJSONObject());
+                            // progressResult.setKeepCallback(true);
+                            // context.sendPluginResult(progressResult);
                         }
 
                         if (multipartFormUpload) {
@@ -797,10 +797,10 @@ public class FileTransfer extends CordovaPlugin {
                             while ((bytesRead = inputStream.read(buffer)) > 0) {
                                 outputStream.write(buffer, 0, bytesRead);
                                 // Send a progress event.
-                                progress.setLoaded(inputStream.getTotalRawBytesRead());
-                                PluginResult progressResult = new PluginResult(PluginResult.Status.OK, progress.toJSONObject());
-                                progressResult.setKeepCallback(true);
-                                context.sendPluginResult(progressResult);
+                                // progress.setLoaded(inputStream.getTotalRawBytesRead());
+                                // PluginResult progressResult = new PluginResult(PluginResult.Status.OK, progress.toJSONObject());
+                                // progressResult.setKeepCallback(true);
+                                // context.sendPluginResult(progressResult);
                             }
                         } finally {
                             synchronized (context) {
